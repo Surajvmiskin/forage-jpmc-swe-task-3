@@ -1,0 +1,66 @@
+From ffea3828806cb5caf72a336f6cf147db36e471d3 Mon Sep 17 00:00:00 2001
+From: Suraj Vinod Miskin <114627861+Surajvmiskin@users.noreply.github.com>
+Date: Mon, 22 Jan 2024 20:36:37 +0000
+Subject: [PATCH] commit
+
+---
+ 0001-commit.patch | 37 -------------------------------------
+ test.csv          |  1 -
+ 2 files changed, 38 deletions(-)
+ delete mode 100644 0001-commit.patch
+
+diff --git a/0001-commit.patch b/0001-commit.patch
+deleted file mode 100644
+index 3fc7a2c..0000000
+--- a/0001-commit.patch
++++ /dev/null
+@@ -1,37 +0,0 @@
+-From 8e5f58dd2189b22433b8787c6e3b72026a825e76 Mon Sep 17 00:00:00 2001
+-From: Suraj Vinod Miskin <114627861+Surajvmiskin@users.noreply.github.com>
+-Date: Mon, 22 Jan 2024 20:23:42 +0000
+-Subject: [PATCH] commit
+-
+----
+- src/Graph.tsx | 7 ++++---
+- 1 file changed, 4 insertions(+), 3 deletions(-)
+-
+-diff --git a/src/Graph.tsx b/src/Graph.tsx
+-index cb292cc..9efa95a 100644
+---- a/src/Graph.tsx
+-+++ b/src/Graph.tsx
+-@@ -1,5 +1,5 @@
+- import React, { Component } from 'react';
+--import { Table } from '@finos/perspective';
+-+import { Table, TableData } from '@finos/perspective';
+- import { ServerRespond } from './DataStreamer';
+- import { DataManipulator } from './DataManipulator';
+- import './Graph.css';
+-@@ -53,10 +53,11 @@ class Graph extends Component<IProps, {}> {
+-   }
+- 
+-   componentDidUpdate() {
+--    if (this.table) {
+-+    if (this.table) { 
+-       this.table.update([
+-         DataManipulator.generateRow(this.props.data),
+--      ]);
+-+      ] as unknown as TableData
+-+      );
+-     }
+-   }
+- }
+--- 
+-2.43.0
+-
+diff --git a/test.csv b/test.csv
+index d2b2a10..0216dfb 100644
+--- a/test.csv
++++ b/test.csv
+@@ -1829,4 +1829,3 @@
+ 2024-01-27 10:20:04.985486,ABC,sell,108.69,140
+ 2024-01-28 08:23:43.522705,ABC,buy,107.0,19
+ 2024-01-29 10:47:50.065081,ABC,sell,109.48,58
+-2024-01-30 22:38:50.999795,ABC,sell,108.89,0
+-- 
+2.43.0
+
